@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.ProjectsixDao">
+    <select id="listProjectsix" resultType="com.wang.pojo.Projectsix">
+        select *
+        from choicesix
+    </select>
+
+    <select id="listProjectsixBytest" parameterType="com.wang.pojo.query.ProjectsixQuery" resultType="com.wang.pojo.Projectsix">
+        select *
+        from choicesix
+        <where>
+            <if test="test != null and test != ''">
+                and `test` like concat('%',#{test},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteProjectsixById" parameterType="int">
+        delete from choicesix where id=#{id}
+    </delete>
+
+    <select id="queryProjectsixById" parameterType="int" resultType="com.wang.pojo.Projectsix">
+        select * from choicesix where  id=#{id}
+    </select>
+
+    <update id="updateProjectsix" parameterType="com.wang.pojo.Projectsix">
+        update choicesix
+        set test = #{test},answer = #{answer},text = #{text},img = #{img},type = #{type}
+        where id = #{id}
+    </update>
+
+    <insert id="addProjectsix" parameterType="com.wang.pojo.Projectsix">
+        insert into choicesix(test,answer,img,text) values (#{test},#{answer},#{img},#{text},#{type})
+    </insert>
+</mapper>

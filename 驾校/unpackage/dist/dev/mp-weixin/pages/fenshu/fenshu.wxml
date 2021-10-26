@@ -1,0 +1,1 @@
+<view class="box"><view>您共答对：</view><view><text style="font-size:20px;color:#ff0000;">{{myDate}}</text><text>道题</text></view><view><text>考了:</text><text style="font-size:25px;color:#ff0000;">{{fenshu}}</text><text>分</text></view></view>

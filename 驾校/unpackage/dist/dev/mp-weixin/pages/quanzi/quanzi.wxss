@@ -1,0 +1,10 @@
+
+.FABU-button {
+	border: none;
+	outline: 0;
+	background-color: white;
+}
+.FABU-button::after {
+	border: none;
+}
+

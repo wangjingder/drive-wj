@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.UserDao">
+    <select id="listUser" resultType="com.wang.pojo.User">
+        select *
+        from user
+    </select>
+
+    <select id="listUserByuserName" parameterType="com.wang.pojo.query.UserQuery" resultType="com.wang.pojo.User">
+        select *
+        from user
+        <where>
+            <if test="userName != null and userName != ''">
+                and `userName` like concat('%',#{userName},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteUserById" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+    <select id="queryUserById" parameterType="int" resultType="com.wang.pojo.User">
+        select * from user where  id=#{id}
+    </select>
+
+    <select id="queryAdmin" resultType="com.wang.pojo.User">
+        select * from user where userName = #{userName} and password = #{password} and type = 1
+    </select>
+
+    <select id="queryUser" resultType="com.wang.pojo.User">
+        select * from user where userName = #{userName} and password = #{password}
+    </select>
+
+    <update id="updateUser" parameterType="com.wang.pojo.User">
+        update user
+        set password = #{password},name = #{name},phone = #{phone},type = #{type}
+        where id = #{id}
+    </update>
+
+    <insert id="addUser" parameterType="com.wang.pojo.User">
+        insert into user(userName, password,name,phone,type) values (#{userName},#{password},#{name},#{phone},#{type})
+    </insert>
+    <!-- 用户注册 -->
+    <insert id="userRegister" parameterType="com.wang.pojo.User">
+        insert into user (userName, password,
+      phone, name)
+    values (#{userName}, #{password},
+      #{phone}, #{name})
+    </insert>
+
+    <!-- 注册时查询是否有重复的用户名 -->
+    <select id="loginuserName" parameterType="java.lang.String" resultType="com.wang.pojo.User">
+    select userName from user where userName=#{userName}
+  </select>
+</mapper>

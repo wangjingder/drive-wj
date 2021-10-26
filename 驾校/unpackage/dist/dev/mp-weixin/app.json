@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/Login/Login",
+    "pages/personal/personal",
+    "pages/testLogin/testLogin",
+    "pages/payList/payList",
+    "pages/index/index",
+    "pages/test/test",
+    "pages/Projectone/Projectone",
+    "pages/Projecttwo/Projecttwo",
+    "pages/Projectfour/Projectfour",
+    "pages/Projectthree/Projectthree",
+    "pages/notice/notice",
+    "pages/Kaoshi/Kaoshi",
+    "pages/Msgbook/Msgbook",
+    "pages/Projectfive/Projectfive",
+    "pages/Projectsix/Projectsix",
+    "pages/Groundword/Groundword",
+    "pages/fenshu/fenshu",
+    "pages/quanzi/quanzi",
+    "pages/quanzi-fabu/quanzi-fabu",
+    "pages/rubish/rubish",
+    "pages/xiangqing/xiangqing"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "个人主页",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "技巧练习",
+        "pagePath": "pages/index/index",
+        "iconPath": "./static/技巧.png",
+        "selectedIconPath": "static/技巧 (1).png"
+      },
+      {
+        "text": "模拟考试",
+        "pagePath": "pages/test/test",
+        "iconPath": "static/考试记录.png",
+        "selectedIconPath": "./static/考试记录 (1).png"
+      },
+      {
+        "text": "个人主页",
+        "pagePath": "pages/personal/personal",
+        "iconPath": "static/个人主页.png",
+        "selectedIconPath": "./static/个人主页 (1).png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置"
+    }
+  },
+  "usingComponents": {}
+}

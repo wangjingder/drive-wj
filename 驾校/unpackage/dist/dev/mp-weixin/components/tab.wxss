@@ -1,0 +1,30 @@
+
+.uni-swiper-tab.data-v-4ca2a42a{
+        border-bottom: 1rpx solid #EEEEEE;
+		height: 48px;
+}
+.swiper-tab-list.data-v-4ca2a42a{
+        color: #969696;
+        font-weight: bold;
+		float:left;
+		width: 50%;
+		text-align: center;
+		height: 45px;
+		line-height: 45px;
+}
+.uni-tab-bar .active.data-v-4ca2a42a{
+        color: #343434;
+		float:left;
+		width: 50%;
+		text-align: center;
+		height: 45px;
+		line-height: 45px;
+}
+.active .swiper-tab-line.data-v-4ca2a42a{
+        border-bottom: 6rpx solid #FEDE33;
+        width: 70rpx;
+        margin: auto;
+        border-top: 6rpx solid #FEDE33;
+        border-radius: 20rpx;
+}
+

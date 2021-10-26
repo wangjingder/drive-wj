@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.ProjecttwoDao">
+    <select id="listProjecttwo" resultType="com.wang.pojo.Projecttwo">
+        select *
+        from choicetwo
+    </select>
+
+    <select id="listProjecttwoBytest" parameterType="com.wang.pojo.query.ProjecttwoQuery" resultType="com.wang.pojo.Projecttwo">
+        select *
+        from choicetwo
+        <where>
+            <if test="test != null and test != ''">
+                and `test` like concat('%',#{test},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteProjecttwoById" parameterType="int">
+        delete from choicetwo where id=#{id}
+    </delete>
+
+    <select id="queryProjecttwoById" parameterType="int" resultType="com.wang.pojo.Projecttwo">
+        select * from choicetwo where  id=#{id}
+    </select>
+
+    <update id="updateProjecttwo" parameterType="com.wang.pojo.Projecttwo">
+        update choicetwo
+        set test = #{test},choose_a = #{choose_a},answer = #{answer},text = #{text},img = #{img},choose_b = #{choose_b},choose_c = #{choose_c},choose_d = #{choose_d},type = #{type}
+        where id = #{id}
+    </update>
+
+    <insert id="addProjecttwo" parameterType="com.wang.pojo.Projecttwo">
+        insert into choicetwo(test,choose_a,choose_b,choose_c,choose_d,answer,img,text) values (#{test},#{choose_a},#{choose_b},#{choose_c},#{choose_d},#{answer},#{img},#{text},#{type})
+    </insert>
+</mapper>

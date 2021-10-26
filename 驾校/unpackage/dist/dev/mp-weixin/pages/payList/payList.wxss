@@ -1,0 +1,52 @@
+
+.body{
+	width: 100%;
+}
+.box{
+	width: 90%;
+	height: 80px;
+	border: 1px solid black;
+	border-radius: 15px;
+	margin:auto;
+	margin-bottom: 8px;
+	background: url(/static/img/1.jpg) 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+.h{
+	margin-left:20rpx;
+	margin-top: 10rpx;
+}
+.p{
+	margin-left: 20rpx;
+	margin-top: 60rpx;
+}
+.t{
+	float: right;
+	margin-right: 20rpx;
+	margin-top: 10rpx;
+	color: red;
+}
+.list{
+		margin-top: 40px;
+		padding: 5rpx 2px;
+}
+.list-box{
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		border: 1px solid #dedede;
+		margin:0 0 -1px -1px;
+		position: relative; 
+		z-index: 0;
+}
+.left{
+		float: left;
+		font-size: 15px;
+		margin-left: 10px;
+}
+.right{
+		float: right;
+		font-size: 15px;
+		width: 10px;
+}
+

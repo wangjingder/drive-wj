@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,0F;AACAA,UAAU,CAACC,eAAD,CAAV,C","file":"quanzi/quanzi.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './quanzi/quanzi.vue'\ncreatePage(Page)"],"sourceRoot":""}

@@ -1,0 +1,12 @@
+
+.box{
+	width:50%;
+	height: 370rpx;
+	margin: 0 auto;
+	border: 1px solid #FF0000;
+	border-radius: 200px;
+	margin-top: 150px;
+	text-align: center;
+	line-height: 100rpx;
+}
+

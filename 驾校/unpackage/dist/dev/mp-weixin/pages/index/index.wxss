@@ -1,0 +1,129 @@
+
+.ninth {
+	/* padding: 30rpx 30rpx 0 30rpx; */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	/* justify-content: space-between; */
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	background: white;
+	border: 500px;
+}
+.ninth ._li {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	width: 33%;
+	height: 250rpx;
+	/* margin-bottom: 30rpx; */
+	background: white;
+	list-style: none;
+
+	/*边框合并*/
+	margin: 0 0 -1px -1px;
+	position: relative;
+	z-index: 0;
+}
+.ninth ._li:hover {
+	border-color: orange;
+	z-index: 1;
+}
+.fenxiang-button {
+	border: none;
+	outline: 0;
+	border-color: transparent;
+	width: 80%;
+	height: 60rpx;
+	font-size: 30rpx;
+	line-height: 60rpx;
+	text-align: right;
+	vertical-align: middle;
+	background-color: white;
+}
+.float-right {
+	float: right;
+	width: 50%;
+}
+.float-left {
+	float: left;
+	margin-top: 18px;
+	margin-left: 10%;
+}
+.box {
+	width: 100%;
+	height: 100px;
+	margin-top: 30px;
+}
+.fenxiang-button::after {
+	border: none;
+}
+.view_saoyisao {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	width: 60px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.image_saoyisao {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	width: 40px;
+	height: 40px;
+}
+.content {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.touch {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 45px;
+	height: 45px;
+	/* 知识点
+        line-height是行高，针对的对象是文字，height针对的是容器，
+        也就是高度，当height和line-height值相同时会居中，
+        当line-height值小于height时文字向上移动，反之向下移动。
+         */
+	line-height: 45px;
+	/* 文字垂直居中 */
+	text-align: center;
+	/* 水平居中 */
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 50%;
+	color: #fff;
+	font-size: 30px;
+	/* 去除标签点击事件高亮效果 */
+	-webkit-tap-highlight-color: transparent;
+	/* 使用transform: translate3d 处理性能高 GUP */
+	z-index: 99;
+}
+

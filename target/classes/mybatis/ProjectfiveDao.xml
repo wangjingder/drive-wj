@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.ProjectfiveDao">
+    <select id="listProjectfive" resultType="com.wang.pojo.Projectfive">
+        select *
+        from choicefive
+    </select>
+
+    <select id="listProjectfiveBytest" parameterType="com.wang.pojo.query.ProjectfiveQuery" resultType="com.wang.pojo.Projectfive">
+        select *
+        from choicefive
+        <where>
+            <if test="test != null and test != ''">
+                and `test` like concat('%',#{test},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteProjectfiveById" parameterType="int">
+        delete from choicefive where id=#{id}
+    </delete>
+
+    <select id="queryProjectfiveById" parameterType="int" resultType="com.wang.pojo.Projectfive">
+        select * from choicefive where  id=#{id}
+    </select>
+
+    <update id="updateProjectfive" parameterType="com.wang.pojo.Projectfive">
+        update choicefive
+        set test = #{test},choose_a = #{choose_a},answer = #{answer},text = #{text},img = #{img},choose_b = #{choose_b},choose_c = #{choose_c},choose_d = #{choose_d},type = #{type}
+        where id = #{id}
+    </update>
+
+    <insert id="addProjectfive" parameterType="com.wang.pojo.Projectfive">
+        insert into choicefive(test,choose_a,choose_b,choose_c,choose_d,answer,img,text) values (#{test},#{choose_a},#{choose_b},#{choose_c},#{choose_d},#{answer},#{img},#{text},#{type})
+    </insert>
+</mapper>
