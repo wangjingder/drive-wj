@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.QuanziDao">
+    <select id="listQuanzi" resultType="com.wang.pojo.Quanzi">
+        select *
+        from quanzi order by id desc
+    </select>
+
+    <select id="listQuanziBytest" parameterType="com.wang.pojo.query.QuanziQuery" resultType="com.wang.pojo.Quanzi">
+        select *
+        from quanzi
+        <where>
+            <if test="text != null and text != ''">
+                and `text` like concat('%',#{text},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteQuanziById" parameterType="int">
+        delete from quanzi where id=#{id}
+    </delete>
+
+    <select id="queryQuanziById" parameterType="int" resultType="com.wang.pojo.Quanzi">
+        select * from quanzi where  id=#{id}
+    </select>
+
+    <update id="updateQuanzi" parameterType="com.wang.pojo.Quanzi">
+        update quanzi
+        set text = #{text},imglist = #{imglist},userInfo = #{userInfo},userName=#{userName}
+        where id = #{id}
+    </update>
+
+    <insert id="addQuanzi" parameterType="com.wang.pojo.Quanzi">
+        insert into quanzi(text,imglist,userInfo,userName) values (#{userName},#{text},#{imglist},#{userInfo})
+    </insert>
+    <insert id="quanziRegister" parameterType="com.wang.pojo.Quanzi">
+        insert into quanzi (text, imglist,
+      userInfo,userName)
+    values (#{text}, #{imglist},
+      #{userInfo},#{userName})
+    </insert>
+</mapper>

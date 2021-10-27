@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.ProjectsevenDao">
+    <select id="listProjectseven" resultType="com.wang.pojo.Projectseven">
+        select *
+        from choiceseven
+    </select>
+
+    <select id="listProjectsevenBytest" parameterType="com.wang.pojo.query.ProjectsevenQuery" resultType="com.wang.pojo.Projectseven">
+        select *
+        from choiceseven
+        <where>
+            <if test="test != null and test != ''">
+                and `test` like concat('%',#{test},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteProjectsevenById" parameterType="int">
+        delete from choiceseven where id=#{id}
+    </delete>
+
+    <select id="queryProjectsevenById" parameterType="int" resultType="com.wang.pojo.Projectseven">
+        select * from choiceseven where  id=#{id}
+    </select>
+
+    <select id="queryProjectseven" parameterType="string" resultType="com.wang.pojo.Projectseven">
+        select * from choiceseven where city = #{city}
+    </select>
+
+    <update id="updateProjectseven" parameterType="com.wang.pojo.Projectseven">
+        update choiceseven
+        set test = #{test},choose_a = #{choose_a},answer = #{answer},text = #{text},img = #{img},choose_b = #{choose_b},choose_c = #{choose_c},choose_d = #{choose_d},city = #{city}
+        where id = #{id}
+    </update>
+
+    <insert id="addProjectseven" parameterType="com.wang.pojo.Projectseven">
+        insert into choiceseven(test,choose_a,choose_b,choose_c,choose_d,answer,img,text) values (#{test},#{choose_a},#{choose_b},#{choose_c},#{choose_d},#{answer},#{img},#{text},#{city})
+    </insert>
+</mapper>

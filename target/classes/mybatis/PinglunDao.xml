@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.PinglunDao">
+    <select id="listPinglun" resultType="com.wang.pojo.Pinglun">
+        select *
+        from pinglun
+    </select>
+
+    <select id="listPinglunBytest" parameterType="com.wang.pojo.query.PinglunQuery" resultType="com.wang.pojo.Pinglun">
+        select *
+        from pinglun
+        <where>
+            <if test="text != null and text != ''">
+                and `text` like concat('%',#{text},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deletePinglunById" parameterType="int">
+        delete from pinglun where id=#{id}
+    </delete>
+
+    <select id="queryPinglunById" parameterType="int" resultType="com.wang.pojo.Pinglun">
+        select * from pinglun where  id=#{id}
+    </select>
+
+    <select id="queryPinglun" parameterType="string" resultType="com.wang.pojo.Pinglun">
+        select * from pinglun where userId = #{userId}
+    </select>
+
+    <update id="updatePinglun" parameterType="com.wang.pojo.Pinglun">
+        update pinglun
+        set text = #{text},userId = #{userId},userName=#{userName}
+        where id = #{id}
+    </update>
+
+    <insert id="addPinglun" parameterType="com.wang.pojo.Pinglun">
+        insert into choiceseven(text,userId,userName) values (#{text},#{userId},#{userName})
+    </insert>
+
+    <insert id="pinglunRegister" parameterType="com.wang.pojo.Pinglun">
+        insert into pinglun (text,
+      userId,userName)
+    values (#{text},
+      #{userId},#{userName})
+    </insert>
+</mapper>
